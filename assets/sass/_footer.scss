@@ -1,0 +1,14 @@
+@use "extends/_extends_dir";
+
+footer {
+    @include box(100%,10vh);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5%;
+    padding-left: 5%;
+
+    p {
+        font-size: 3vw;
+    }
+}

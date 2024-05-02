@@ -1,0 +1,10 @@
+@use "extends/_extends_dir";
+
+header {
+    @include box(100%,15vh);
+    @extend .flexCenter;
+
+    h1 {
+        font-size: 6vw;
+    }
+}

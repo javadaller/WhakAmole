@@ -1,0 +1,17 @@
+@import "base/_base_dir";
+@import "fnc/_fnc_dir";
+@import "design/_design_dir";
+@import "header";
+@import "main";
+@import "footer";
+
+body {
+    color:white;
+    background-color: black;
+}
+
+.mole {
+    @include box(100%);
+    border-radius: 50%;
+    background-color: tomato;
+}
