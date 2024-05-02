@@ -14,4 +14,18 @@ body {
     @include box(100%);
     border-radius: 50%;
     background-color: tomato;
+    background-image: url(../images/pictures/tom.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.deadMole {
+    @include box(100%);
+    border-radius: 50%;
+    background-color: tomato;
+    background-image: url(../images/pictures/tom2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

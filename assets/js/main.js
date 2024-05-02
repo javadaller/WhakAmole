@@ -1,5 +1,4 @@
 //INTRO TYPE WRITER
-
 const title=document.querySelector('h1');
 const titleText=title.innerText;
 const titleArray=titleText.split('');
@@ -39,7 +38,6 @@ async function elapsedTime() {
 }
 elapsedTime();
 
-
 //CREATE TABLE
 const table=document.querySelector('#table');
 
@@ -74,7 +72,7 @@ async function randomMole() {
         const randomHole=Math.floor(Math.random() * holes.length);
         holes[randomHole].classList.add('mole');
         
-        const randomVisibility=Math.floor(Math.random() * (visibleDelay+300));
+        const randomVisibility=Math.floor(Math.random() * (visibleDelay+700));
         await sleep(randomVisibility);
         holes[randomHole].classList.remove('mole');
 
@@ -83,11 +81,20 @@ async function randomMole() {
 }
 
 //PLAY
-function hammer(div) {
+const audio_ouille=new Audio('assets/sounds/ouille.mp3');
+audio_ouille.preload = 'auto';
+audio_ouille.load();
+
+async function hammer(div) {
     const classes=div.classList;
     if(classes.contains('mole')) {
         score.innerText=parseInt(score.innerText)+1;
         div.classList.remove('mole');
+        div.classList.add('deadMole');
+        const ouille=audio_ouille.cloneNode();
+        ouille.play();
+        await sleep(700);
+        div.classList.remove('deadMole');
     } else {
         if(parseInt(score.innerText) > 0) {
           score.innerText=parseInt(score.innerText)-1;  
